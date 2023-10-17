@@ -1,0 +1,5 @@
+sender = ''
+password = ''
+receiver = ''
+clan_tag = ''
+token = 'Bearer '
