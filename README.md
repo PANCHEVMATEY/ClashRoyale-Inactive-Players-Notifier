@@ -15,16 +15,19 @@ Before you can use this script, you'll need to set up a few variables in the scr
 - `clan_tag`: Your Clash Royale clan's tag, which you want to monitor for inactivity.
 - `token`: Your Clash Royale API token, which is required to access clan member data.
 
-## How to Use
+## Running as a Docker Container
 
-1. Clone this repository to your local machine.
+You can run the Clash Royale Clan Inactivity Notifier as a Docker container to automate the process. This container will execute the script every Monday at 9 AM. To set up and run the Docker container, follow these steps:
+
+1. Make sure you have Docker installed on your system.
+
+2. Clone this repository to your local machine:
 
 ```shell
-https://github.com/PANCHEVMATEY/ClashRoyale-Inactive-Players-Notifier.git```
+git clone https://github.com/PANCHEVMATEY/ClashRoyale-Inactive-Players-Notifier.git
+```
 
-2. Open the `main.py` script.
-
-3. Update the following variables with your own values:
+3. Open the `variables.py` script and update the following variables with your own values:
 
    - `sender`: Your Gmail email address.
    - `password`: Your application-specific password.
@@ -32,20 +35,29 @@ https://github.com/PANCHEVMATEY/ClashRoyale-Inactive-Players-Notifier.git```
    - `clan_tag`: Your Clash Royale clan's tag.
    - `token`: Your Clash Royale API token.
 
-4. Run the script using Python:
+4. Build the Docker image:
 
 ```shell
-python main.py
+docker build -t clash-royale-inactivity-notifier .
 ```
 
-The script will start monitoring the activity of your clan members. When it detects an inactive member, it will send an email notification to the specified receiver.
+5. Run the Docker container, scheduling it to execute every Monday at 9 AM:
+
+```shell
+docker run -d --name inactivity-notifier 
+```
+6. You can customize the crontab content for whatever use case you have
+
+The script will now monitor the activity of your clan members and, when it detects an inactive member, it will send an email notification to the specified receiver every Monday at 9 AM.
 
 ## Acknowledgments
 
 - Thanks to the Clash Royale API for providing access to clan member data.
-- Code With Tomi for helping with the email part
+- Code With Tomi for providing assistance with the email component.
 
 Feel free to reach out if you have any questions or need further assistance with setting up the Clash Royale Clan Inactivity Notifier.
 
 Happy gaming!
 ```
+
+This updated README provides instructions on running the script as a Docker container and specifies the scheduling to execute it every Monday at 9 AM.

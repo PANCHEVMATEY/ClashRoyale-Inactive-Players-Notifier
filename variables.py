@@ -1,5 +1,5 @@
 sender = ''
 password = ''
 receiver = ''
-clan_tag = ''
+clan_tag = '%'
 token = 'Bearer '
