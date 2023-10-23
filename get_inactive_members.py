@@ -33,4 +33,3 @@ def get_inactive_members_details(clan_data, days_threshold=4):
 
 message = get_inactive_members_details(data)
 print(message)
-
