@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+  myapp:
+    build:
+      context: .
+    image: myapp:latest
+    volumes:
+      - .:/app
+    command: ["crond", "-f"]
+    secrets:
+      - mysecrets
+secrets:
+  mysecrets:
+    file: mysecrets.txt
+

@@ -1,13 +1,13 @@
 from email.message import EmailMessage
-from variables import password, sender, receiver
 from get_inactive_members import message
+from variables import sender, receiver, password
 import ssl
 import smtplib
 
 email_sender = sender
 email_password = password
-
 email_receiver = receiver
+
 subject = "Inactive members"
 body = f"""
 {message}
