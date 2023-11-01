@@ -1,8 +1,9 @@
-version: '3.7'
+version: "3.8"
 services:
   myapp:
     build:
       context: .
+      dockerfile: Dockerfile
     image: myapp:latest
     volumes:
       - .:/app
@@ -11,5 +12,5 @@ services:
       - mysecrets
 secrets:
   mysecrets:
-    file: mysecrets.txt
+    external: true
 
