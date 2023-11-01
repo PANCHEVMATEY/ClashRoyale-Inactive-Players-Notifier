@@ -10,3 +10,4 @@ receiver = secrets.get("receiver")
 password = secrets.get("password")
 clan_tag = secrets.get("clan_tag")
 token = secrets.get("token")
+
